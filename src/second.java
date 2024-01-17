@@ -28,6 +28,5 @@ public class second {
         if (D < 0) {
             System.out.println("The quadratic equation has no distinct real roots");
         }
-        return;
     }
 }

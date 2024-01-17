@@ -11,7 +11,7 @@ public class first {
         System.out.println("Enter the x-coordinate and the y-coordinate of the point");
         int pointX = scanner.nextInt();
         int pointY = scanner.nextInt();
-        if (pointX >= x - r && pointX <= x + r && pointY >= y - r && pointY <= y + r) {
+        if (Math.sqrt(Math.abs(x-pointX)*Math.abs(x-pointX)+Math.abs(y-pointY)*Math.abs(y-pointY))<r) {
             System.out.println("The point is inside or on the circle");
         } else {
             System.out.println("The point is outside the circle");
