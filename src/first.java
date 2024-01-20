@@ -1,20 +1,20 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class first {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the x-coordinate and the y-coordinate of the center of the circle");
-        int x = scanner.nextInt();
-        int y = scanner.nextInt();
-        System.out.println("Enter the radius of the circle");
-        int r = scanner.nextInt();
-        System.out.println("Enter the x-coordinate and the y-coordinate of the point");
-        int pointX = scanner.nextInt();
-        int pointY = scanner.nextInt();
-        if (Math.sqrt(Math.abs(x-pointX)*Math.abs(x-pointX)+Math.abs(y-pointY)*Math.abs(y-pointY))<r) {
-            System.out.println("The point is inside or on the circle");
-        } else {
-            System.out.println("The point is outside the circle");
+        int[] array1 = {5, 3, 13, 25, 23};
+        int[] array2 = {2, 77, 26, 24, 55};
+        int bothArrays = array1.length + array2.length;
+        int[] mergingArrays = new int[bothArrays];
+        for (int i = 0; i < array1.length; i = i + 1) {
+            mergingArrays[i] = array1[i];
+        }
+        for (int i = 0; i < array2.length; i = i + 1) {
+            mergingArrays[i + array1.length] = array2[i];
+        }
+        for (int i = 0; i < bothArrays; i = i + 1) {
+            Arrays.sort(mergingArrays);
+            System.out.print(mergingArrays[i] + "\t");
         }
     }
 }
