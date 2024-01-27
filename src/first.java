@@ -1,20 +1,32 @@
 import java.util.Arrays;
-
 public class first {
     public static void main(String[] args) {
-        int[] array1 = {5, 3, 13, 25, 23};
-        int[] array2 = {2, 77, 26, 24, 55};
-        int bothArrays = array1.length + array2.length;
-        int[] mergingArrays = new int[bothArrays];
-        for (int i = 0; i < array1.length; i = i + 1) {
-            mergingArrays[i] = array1[i];
+        int[][] multidimensionalArray = new int[5][5];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 2; j++) {
+                multidimensionalArray[i][j] = 2 * i + j;
+            }
         }
-        for (int i = 0; i < array2.length; i = i + 1) {
-            mergingArrays[i + array1.length] = array2[i];
+        System.out.println();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(multidimensionalArray[i][j] + "\t");
+            }
+            System.out.println();
         }
-        for (int i = 0; i < bothArrays; i = i + 1) {
-            Arrays.sort(mergingArrays);
-            System.out.print(mergingArrays[i] + "\t");
+        for (int i = 0; i < 5; i++) {
+            for (int j = i; j < 5; j++) {
+                int array = multidimensionalArray[i][j];
+                multidimensionalArray[i][j] = multidimensionalArray[j][i];
+                multidimensionalArray[j][i] = array;
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.printf("%3d", multidimensionalArray[i][j]);
+            }
+            System.out.println();
         }
     }
 }
